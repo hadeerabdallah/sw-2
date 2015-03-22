@@ -7,10 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<p> Welcome b2a ya ${it.name} </p>
-<p> This is should be user home page </p>
-<p> Current implemented services "http://fci-swe-apps.appspot.com/rest/RegistrationService --- {requires: uname, email, password}" </p>
-<p> and "http://fci-swe-apps.appspot.com/rest/LoginService --- {requires: uname,  password}" </p>
-<p> you should implement sendFriendRequest service and addFriend service
+<p> Welcome  ${it.name} </p>
+
+	<a href="/social/logout/">Logout</a>  
+   <br>
+ <a href="/social/SendFriendRequest/">Send Friend Request</a>
+   <br>
+<a href="/social/ConfirmFriendRequest/">accept friend</a>
+   <br>
 </body>
 </html>

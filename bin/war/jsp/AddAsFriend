@@ -1,0 +1,30 @@
+package com.FCI.SWE.Models;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+
+public class User {
+	private long senderID;
+	private long recieverID;
+	private String status;
+	/////////////////////////
+	public Boolean addAsAfriend() {
+		DatastoreService datastore2 = DatastoreServiceFactory
+				.getDatastoreService();
+		Query gaeQuery = new Query("addAsAfriend");
+		PreparedQuery pq2 = datastore.prepare(gaeQuery);
+		List<Entity> list = pq2.asList(FetchOptions.Builder.withDefaults());
+
+		Entity employee = new Entity("addAsAfriend", list.size() + 1);
+
+		employee.setProperty("senderID", this.senderID);
+		employee.setProperty("recieverID", this.recieverID);
+		employee.setProperty("status", this.status);
+		datastore.put(employee);
+
+		return true;
+
+	}
+	
